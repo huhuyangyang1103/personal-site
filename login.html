@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 · 胡阳个人网站（实训9）</title>
+  <!-- 步骤（1）：在项目中引入本地 Bootstrap 框架 -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="login-page">
+
+  <div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+
+        <!-- 登录卡片：使用 Bootstrap 卡片组件 -->
+        <div class="card border-0 shadow-lg login-card">
+          <div class="card-body p-4 p-md-5">
+
+            <div class="text-center mb-4">
+              <div class="brand-logo mx-auto mb-3">HY</div>
+              <h1 class="h4 fw-bold mb-1">欢迎回来</h1>
+              <p class="text-secondary small mb-0">登录后进入胡阳的个人介绍页</p>
+            </div>
+
+            <!-- 表单：label + input + button，提交后跳转到个人介绍页 -->
+            <form id="loginForm" action="index.html" method="get" class="needs-validation" novalidate>
+
+              <div class="mb-3">
+                <label for="username" class="form-label">用户名</label>
+                <input type="text" class="form-control form-control-lg" id="username" name="username"
+                       placeholder="请输入用户名" minlength="3" maxlength="16" required>
+                <div class="form-text">用户名为 3—16 位字符</div>
+                <div class="invalid-feedback">请输入 3—16 位的用户名</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">密码</label>
+                <input type="password" class="form-control form-control-lg" id="password" name="password"
+                       placeholder="请输入密码" minlength="6" required>
+                <div class="invalid-feedback">密码长度不能少于 6 位</div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember">
+                  <label class="form-check-label small" for="remember">记住我</label>
+                </div>
+                <!-- 超链接：Bootstrap 链接样式 -->
+                <a href="#" class="link-primary small text-decoration-none">忘记密码？</a>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">登 录</button>
+
+              <div class="text-center small text-secondary">
+                还没有账号？<a href="#" class="link-primary text-decoration-none">立即注册</a>
+              </div>
+
+              <hr class="my-4">
+
+              <!-- 超链接跳转：不登录也可进入个人介绍页 -->
+              <div class="text-center">
+                <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                  以游客身份浏览个人主页
+                </a>
+              </div>
+
+            </form>
+
+          </div>
+          <div class="card-footer bg-white border-0 text-center py-3">
+            <span class="badge text-bg-light fw-normal">网页设计专业 · 形考9 · Bootstrap 响应式网页</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    /* 使用 Bootstrap 的校验样式：未通过时不提交，通过时跳转 index.html */
+    (function () {
+      const form = document.getElementById('loginForm');
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+</body>
+</html>

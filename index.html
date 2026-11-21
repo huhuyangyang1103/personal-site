@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>胡阳 · 个人介绍页（实训9）</title>
+  <!-- 引入本地 Bootstrap 框架与自定义样式 -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+
+  <!-- ============ 导航栏：Bootstrap 导航组件，多模块折叠 ============ -->
+  <nav class="navbar navbar-expand-lg navbar-dark profile-navbar sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <span class="navbar-brand-logo">HY</span>
+        胡阳 · 个人主页
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+              aria-controls="navbarMenu" aria-expanded="false" aria-label="切换导航">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">关于我</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+          <li class="nav-item"><a class="nav-link" href="#works">作品</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">联系</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">登录</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 首屏：栅格 + 按钮 + 徽章 ============ -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge rounded-pill text-bg-primary mb-3">Web 前端开发实习生</span>
+          <h1 class="hero-title mb-3">你好，我是<span class="text-primary">胡阳</span></h1>
+          <p class="text-secondary mb-4">
+            网页设计专业在读学生，熟悉 HTML、CSS 与 JavaScript 基础，并开始使用 Bootstrap 框架
+            搭建响应式页面。喜欢先把结构理清楚，再逐块打磨界面的间距、颜色与对齐。
+          </p>
+          <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
+            <a href="#works" class="btn btn-primary px-4">查看作品</a>
+            <a href="#contact" class="btn btn-outline-secondary px-4">联系我</a>
+            <a href="login.html" class="btn btn-link text-decoration-none">返回登录页</a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div class="hero-avatar mx-auto mb-3">HY</div>
+          <p class="mb-1 fw-bold">胡阳</p>
+          <p class="text-secondary small mb-0">北京开放大学 · 网页设计专业</p>
+          <p class="text-secondary small">北京 · 2025.3 — 2026.11</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 轮播组件：展示个人照片与学习记录 ============ -->
+  <section class="py-4 bg-white">
+    <div class="container">
+      <div id="heroCarousel" class="carousel slide hero-carousel shadow-sm rounded-4 overflow-hidden"
+           data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="第 1 张"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="第 2 张"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="第 3 张"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/2.jpg" class="d-block w-100" alt="学习记录照片一">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="mb-1">学习记录</h5>
+              <p class="small mb-0">课程实训期间记录的素材照片</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/3.jpg" class="d-block w-100" alt="学习记录照片二">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="mb-1">技术视野</h5>
+              <p class="small mb-0">关注前端技术与数据可视化</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/work3.png" class="d-block w-100" alt="实训作品截图">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="mb-1">作品片段</h5>
+              <p class="small mb-0">实训3 登录表单与验证页面</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">上一张</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">下一张</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 关于我：栅格 + 列表组 ============ -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <h2 class="section-title mb-4">关于我</h2>
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-7">
+          <p class="text-secondary">
+            我是一名网页设计专业的学生，从 HTML 与 CSS 入门，先后完成了登录表单验证、CSS 新闻列表、
+            个人简历美化、简历视频播放器、轮播图定时器和个人主页 UI 设计等实训项目，逐步熟悉了
+            从页面结构编写到样式美化的完整流程。
+          </p>
+          <p class="text-secondary mb-0">
+            本次实训第一次使用 Bootstrap 框架，最大的感受是栅格系统和现成组件把重复的排版工作省了下来，
+            可以把精力放在内容组织和配色上；同时也要注意不能在框架的默认样式里迷失，仍要按需求做取舍。
+          </p>
+        </div>
+        <div class="col-lg-5">
+          <ul class="list-group list-group-flush shadow-sm rounded-3">
+            <li class="list-group-item d-flex justify-content-between"><span class="text-secondary">姓　　名</span><strong>胡阳</strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="text-secondary">专　　业</span><strong>网页设计</strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="text-secondary">所在城市</span><strong>北京</strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="text-secondary">求职意向</span><strong>Web 前端开发实习生</strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="text-secondary">使用框架</span><strong>Bootstrap 5.3</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 技能：卡片 + 进度条 ============ -->
+  <section class="section-padding bg-white" id="skills">
+    <div class="container">
+      <h2 class="section-title mb-4">技能特长</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">HTML</h5>
+              <p class="card-text small text-secondary">熟悉常用标签与语义化结构，能独立搭建表单、列表与多媒体模块。</p>
+              <div class="progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-primary" style="width: 85%"></div>
+              </div>
+              <p class="small text-secondary text-end mt-2 mb-0">熟练</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">CSS</h5>
+              <p class="card-text small text-secondary">掌握选择器、盒模型、弹性与网格布局，能完成排版与响应式适配。</p>
+              <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-primary" style="width: 80%"></div>
+              </div>
+              <p class="small text-secondary text-end mt-2 mb-0">熟练</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">JavaScript</h5>
+              <p class="card-text small text-secondary">了解基础语法与 DOM 操作，可完成表单校验与轮播等交互。</p>
+              <div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-primary" style="width: 60%"></div>
+              </div>
+              <p class="small text-secondary text-end mt-2 mb-0">掌握</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Bootstrap</h5>
+              <p class="card-text small text-secondary">会引入框架，使用栅格、导航、轮播、卡片、模态框等组件。</p>
+              <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-primary" style="width: 70%"></div>
+              </div>
+              <p class="small text-secondary text-end mt-2 mb-0">掌握</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 作品：栅格卡片 + 徽章 + 按钮 ============ -->
+  <section class="section-padding" id="works">
+    <div class="container">
+      <h2 class="section-title mb-4">作品展示</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm work-card">
+            <img src="images/work3.png" class="card-img-top" alt="登录表单与验证页面">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title mb-0">登录表单与验证</h5>
+                <span class="badge text-bg-light">实训3</span>
+              </div>
+              <p class="card-text small text-secondary">表单结构搭建、输入类型校验与提示信息。</p>
+              <a href="mywebside.html" class="btn btn-outline-primary btn-sm">查看页面</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm work-card">
+            <img src="images/work4.png" class="card-img-top" alt="CSS 新闻列表页面">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title mb-0">CSS 新闻列表</h5>
+                <span class="badge text-bg-light">实训4</span>
+              </div>
+              <p class="card-text small text-secondary">列表排版、标签配色与悬停效果。</p>
+              <a href="news2.html" class="btn btn-outline-primary btn-sm">查看页面</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm work-card">
+            <img src="images/work7.png" class="card-img-top" alt="轮播图定时器页面">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title mb-0">轮播图定时器</h5>
+                <span class="badge text-bg-light">实训7</span>
+              </div>
+              <p class="card-text small text-secondary">DOM 操作、定时器与鼠标悬停暂停。</p>
+              <a href="slideshow.html" class="btn btn-outline-primary btn-sm">查看页面</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 折叠面板：学习经历 ============ -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <h2 class="section-title mb-4">学习经历</h2>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="accordion" id="expAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1"
+                        aria-expanded="true" aria-controls="exp1">
+                  2025.3 — 2025.6　HTML 与 CSS 基础
+                </button>
+              </h2>
+              <div id="exp1" class="accordion-collapse collapse show" data-bs-parent="#expAccordion">
+                <div class="accordion-body small text-secondary">
+                  学习页面结构、常用标签、盒模型与文本样式，完成登录表单与新闻列表两个实训页面。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#exp2" aria-expanded="false" aria-controls="exp2">
+                  2025.9 — 2026.1　页面美化与交互
+                </button>
+              </h2>
+              <div id="exp2" class="accordion-collapse collapse" data-bs-parent="#expAccordion">
+                <div class="accordion-body small text-secondary">
+                  完成个人简历美化、简历视频播放器与轮播图定时器，开始接触 JavaScript 与 DOM 操作。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#exp3" aria-expanded="false" aria-controls="exp3">
+                  2026.9 — 2026.11　布局思维与响应式设计
+                </button>
+              </h2>
+              <div id="exp3" class="accordion-collapse collapse" data-bs-parent="#expAccordion">
+                <div class="accordion-body small text-secondary">
+                  学习网格与弹性布局，完成个人主页 UI 设计，并在本次实训中引入 Bootstrap 框架制作响应式网站。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card border-0 bg-light h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">现阶段目标</h5>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li class="mb-2">· 熟练使用 Bootstrap 栅格与组件</li>
+                <li class="mb-2">· 能独立完成响应式页面适配</li>
+                <li class="mb-2">· 补充 JavaScript 交互能力</li>
+                <li class="mb-0">· 积累 3 个以上完整页面作品</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 联系：表单 + 模态框 ============ -->
+  <section class="section-padding contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title mb-4">联系方式</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="card-title mb-3">给我留言</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="cName" class="form-label">称呼</label>
+                  <input type="text" class="form-control" id="cName" placeholder="请输入您的称呼" required>
+                </div>
+                <div class="mb-3">
+                  <label for="cMail" class="form-label">邮箱</label>
+                  <input type="email" class="form-control" id="cMail" placeholder="name@example.com" required>
+                </div>
+                <div class="mb-3">
+                  <label for="cMsg" class="form-label">留言内容</label>
+                  <textarea class="form-control" id="cMsg" rows="3" placeholder="请输入留言"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">提交留言</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body p-4">
+              <h5 class="card-title mb-3">联系信息</h5>
+              <p class="mb-2 small text-secondary">电话：186006xxxxx</p>
+              <p class="mb-2 small text-secondary">邮箱：tonyquen@hotmail.com</p>
+              <p class="mb-3 small text-secondary">城市：北京</p>
+              <!-- 按钮触发模态框 -->
+              <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                      data-bs-target="#contactModal">
+                查看完整联系方式
+              </button>
+            </div>
+          </div>
+          <div class="card border-0 bg-primary text-white">
+            <div class="card-body p-4">
+              <h6 class="mb-2">正在寻找实习机会</h6>
+              <p class="small mb-0 opacity-75">欢迎通过邮箱与我联系，期待参与真实项目。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="bg-dark text-white-50 py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0 small">© 2026 胡阳 · 个人介绍页</p>
+      <p class="mb-0 small">网页设计专业 · 形考9 · 响应式网页设计</p>
+    </div>
+  </footer>
+
+  <!-- ============ 模态框组件 ============ -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">完整联系方式</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">电话：186006xxxxx</p>
+          <p class="mb-2">邮箱：tonyquen@hotmail.com</p>
+          <p class="mb-2">所在城市：北京</p>
+          <p class="mb-0">可联系时间：工作日 9:00—18:00</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+          <a href="login.html" class="btn btn-primary">返回登录页</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
